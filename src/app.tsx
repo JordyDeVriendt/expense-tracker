@@ -32,8 +32,8 @@ const App: FunctionComponent<AppProps> = () => {
     const handleEmail = (newEmail:string) => {
         setEmail(newEmail)
     }
-    const handleId = (newEmail:string) => {
-        setEmail(newEmail)
+    const handleId = (newId:string) => {
+        setId(newId)
     }
     return (
         <BrowserRouter>
