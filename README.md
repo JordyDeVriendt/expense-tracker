@@ -20,3 +20,6 @@ Expense Tracker is a simple web application built with TypeScript and React. It 
 - RESTful API
 - Axios
 - TanStack Query
+
+## API Repository
+https://github.com/r0897003/expense-tracker-api
