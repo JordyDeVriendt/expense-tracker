@@ -9,6 +9,7 @@ interface IAccountContext {
     handleUsername: (newUsername:string) => void
     handleEmail: (newEmail:string) => void
     handleId: (newEmail:string) => void
+    logOut: () => void
 }
 
 export const AccountContext = createContext<IAccountContext> ({
@@ -26,6 +27,9 @@ export const AccountContext = createContext<IAccountContext> ({
         console.warn('An implementation for this method has not been provided.')
     },
     handleId: (): void => {
+        console.warn('An implementation for this method has not been provided.')
+    },
+    logOut: (): void => {
         console.warn('An implementation for this method has not been provided.')
     },
 })

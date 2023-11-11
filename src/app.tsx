@@ -19,10 +19,13 @@ const queryClient = new QueryClient({
 })
 
 const App: FunctionComponent<AppProps> = () => {
+    // account states
     const [isLoggedIn, setIsLoggedIn] = useState<boolean | undefined>(false)
     const [username, setUsername] = useState<string | undefined>(undefined)
     const [email, setEmail] = useState<string | undefined>(undefined)
     const [id, setId] = useState<string | undefined>(undefined)
+
+    //account methods
     const handleIsLoggedIn = (value:boolean) => {
         setIsLoggedIn(value)
     }
@@ -35,9 +38,16 @@ const App: FunctionComponent<AppProps> = () => {
     const handleId = (newId:string) => {
         setId(newId)
     }
+    const logOut = () => {
+        setIsLoggedIn(false)
+        setUsername(undefined)
+        setEmail(undefined)
+        setId(undefined)
+    }
+
     return (
         <BrowserRouter>
-            <AccountContext.Provider value={{isLoggedIn,username,email,id,handleIsLoggedIn,handleUsername,handleEmail,handleId}}>
+            <AccountContext.Provider value={{isLoggedIn,username,email,id,handleIsLoggedIn,handleUsername,handleEmail,handleId,logOut}}>
                 <QueryClientProvider client={queryClient}>
                     <NavbarBootstrap/>
                     <Container>
